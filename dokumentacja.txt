@@ -1,0 +1,32 @@
+Dokumentacja do progarmu kartka:
+
+Sposób urzytkowania:
+Należy uruchomić program i wpisać w terminalu imię osoby dla której ma się wygenerować kartka.
+Program zapisze kartę urodzinową w pliku: ProjektPIPR/tla/kartka.jpg
+Scieżkę do pliku można zmienić na dole kodu programu przy wyłowywaniu funkcji
+karolina.wklejenie_zyczen lub na samej gurzy zmieniając zmienną przykladowa_sciezka
+
+Opis działania programu:
+Głównym elementem programu jest klasa Kartka która przyjmuje przy wywołaniu zmienną
+imie(imie solenizanta) i opcjonalnie dwie zmienne los1 i los2 gdyby użytkownik
+chciał wybrać konkretne życzenia i tło zamiast losowych.Powinny one być z przedziału od 1 do 3.
+
+Funkcja init klasy Kartka sprawdza poprawność wpisanych zmiennych i przypisuje trzy nowe.
+self.plec jest z zakresy 'male' lub 'female' i jest przypisywana na podstawie
+API rozpoznającego płeć na podstawie imienia.
+self.zyczenia jest stringiem z życzeniami wybieranymi z pliku zyczenia.txt
+na podstawie płci i zmiennej los1.
+self.tlo jest tłem do zyczen wybieranym z foldery  tla na podstawie płci i zmiennej los2.
+
+Funkcja najdluzsza_linia_zyczen klasy Kartka dzieli życzenia na linie, sprawdza ich długość
+i zwraca najdłuższą linie życzeń. Będzie to potrzebne przy określaniu szerokości życzeń.
+
+Funkcja wielkosc_zyczen klasy Kartka określa wielkość życzeń dla czcionki 1 i zwiększa czcionke
+tak żeby ani długość, ani szerokość życzeń nie przekroczyły 70% długości i szerokości tła.
+ Zwraca font z ustaloną wielkością.
+
+Funkcja miejsce_wklejenia znajduje i zwraca miejsce wklejenia takie żeby
+ życzenia znajdowały się na środku kartki urodzinowej.
+
+Fynkcja wklejenie_zyczen klasy Kartka z wykożystaniem poprzednich funkcji
+ wkleja życzenia na tło i zapisuje obrazek w podanej scieżce.
